@@ -2,7 +2,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  /* cursor: none !important; */
+  cursor: none !important;
 }
 
 @font-face {
@@ -180,6 +180,7 @@ ul {
   justify-content: center;
   width: 80px;
   height: 80px;
+  z-index: 200;
   background-color: #000;
   font-size: 18px;
   line-height: 18px;
@@ -190,6 +191,21 @@ ul {
   background-color: #000;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+}
+
+.view-visible .mouse__view {
+  opacity: 1;
+}
+
+.links-visible::after {
+  border: 4px solid #cdcdcd;
+  transform: translate(-50%, -50%) scale(0.5);
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.links-visible::before {
+  opacity: 0;
 }
 
 .container {
